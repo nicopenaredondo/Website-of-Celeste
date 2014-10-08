@@ -1,43 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
-<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
-<title>Andrew Smith - Responsive Resume / Personal Portfolio Template</title>
-<link rel="shortcut icon" href="favicon.ico">
+<?php get_header();?>
 
-<!-- Google Font-->
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,300italic,300,100italic,100,400italic,500,500italic,700,900,900italic,700italic%7COswald:400,300,700' rel='stylesheet' type='text/css'>
-<!-- Design Style -->
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() . '/css/scroll.css';?>" />
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() . '/css/style.css';?>" />
-<!-- Icon -->
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() . '/css/font-awesome.css';?>" />
-<!-- Portfolio Thumbnail / Slider -->
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() . '/css/portfolio.css';?>" />
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() . '/css/carousel.css';?>">
-<!-- Responsive -->
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() . '/css/responsive.css';?>" />
-</head>
-<body>
 <div id="container" class="container">
-  <!-- Left Menu / Logo-->
-  <aside class="menu" id="menu">
-    <div class="logo">
-      <!-- Logo image-->
-      <img src="http://placehold.it/140x140" alt=""/>
-      <!-- Logo name-->
-      <span>Andrew Smith</span></div>
-    <!-- Mobile Navigation-->
-    <a href="#menu1" class="menu-link"></a>
-    <!-- Left Navigation-->
-    <nav id="menu1" role="navigation"> <a href="#chapterintroduction"><span id="link_introduction" class="active">Home</span></a> <a href="#chapterabout"><span id="link_about">About</span></a> <a href="#chapterskills"><span id="link_skills">Skills</span></a> <a href="#chapterexperience"><span id="link_experience">Experience</span></a> <a href="#chaptereducation"><span id="link_education">Education</span></a> <a href="#chapterportfolio"><span id="link_portfolio">Portfolio</span></a> <a href="#chaptercontact"><span id="link_contact">Contact</span></a></nav>
-    <div class="social"> <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a> </div>
-    <div class="copyright"> © Andrew Smith.<br>
-      All Rights Reserved. </div>
-  </aside>
+  <?php get_sidebar();?>
   <!-- Go to top link for mobile device -->
   <a href="#menu" class="totop-link">Go to the top</a>
   <div class="content-scroller">
@@ -517,43 +481,5 @@
   </div>
   <!-- content-scroller -->
 </div>
-<!-- Pie Chart / Skills -->
-<script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/jquery-2.0.3.min.js';?>"></script>
-<!-- Send Email -->
-<script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/sendemail.js'?>"></script>
-<!-- Progressbar / Skills-->
-<script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/progressbar.js'?>"></script>
-<!-- Portfolio-->
-<script src="<?php echo get_template_directory_uri() . '/js/modernizr.custom.js'?>"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/head.min.js'?>"></script>
-<!-- Portfolio Thumbnail -->
-<script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/imagesloaded.min.js'?>"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/masonry.min.js'?>"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/class_helper.js'?>"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/grid_gallery.js'?>"></script>
-<!-- Portfolio Grid -->
-<script>
-    new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
-</script>
-<!-- Page Scrolling -->
-<script>
-head.js(
-    { jquery : "<?php echo get_template_directory_uri() . '/js/jquery.min.js';?>" },
-    { mousewheel : "<?php echo get_template_directory_uri() . '/js/jquery.mousewheel.js';?>" },
-    { mwheelIntent : "<?php echo get_template_directory_uri() . '/js/mwheelIntent.js';?>" },
-    { jScrollPane : "<?php echo get_template_directory_uri() . '/js/jquery.jscrollpane.min.js';?>" },
-    { history : "<?php echo get_template_directory_uri() . '/js/jquery.history.js';?>" },
-    { stringLib : "<?php echo get_template_directory_uri() . '/js/core.string.js';?>" },
-    { easing : "<?php echo get_template_directory_uri() . '/js/jquery.easing.1.3.js';?>" },
-    { smartresize : "<?php echo get_template_directory_uri() . '/js/jquery.smartresize.js';?>" },
-    { page : "<?php echo get_template_directory_uri() . '/js/jquery.page.js';?>" }
-    );
-</script>
-<!-- Portfolio Slider-->
-<script type="text/javascript"  src="<?php echo get_template_directory_uri() . '/js/carousel.js';?>"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/jquery.easypiechart.js';?>"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri() . '/js/text.rotator.js';?>"></script>
-<!-- All Javascript Component-->
-<script src="<?php echo get_template_directory_uri() . '/js/settings.js';?>"></script>
-</body>
-</html>
+
+<?php get_footer();?>
