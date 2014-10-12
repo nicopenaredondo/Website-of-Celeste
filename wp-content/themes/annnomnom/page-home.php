@@ -4,7 +4,19 @@
   if(have_posts()) :
     while(have_posts()) :
       the_post();
-      // $slideshow                      = get_field('slider');
+      //home slide
+      $homeSlideshow    = get_field('slideshow');
+      $homeName         = get_field('introduction_message');
+      $homeJobPosition  = get_field('current_job_position');
+
+      //about slide
+      $aboutName  = get_field('name',24);
+      $aboutEmail = get_field('email',24);
+      $aboutContactNumber = get_field('contact_number',24);
+      $aboutDOB = date('F j, Y', strtotime(get_field('date_of_birth',24)));
+      $aboutAddress = get_field('address', 24);
+      $aboutProfessionalProfileDescription = get_field('professional_profile_description', 24);
+      $aboutResume = get_field('resume', 24);
       // $featured_services              = get_field('featured_services');
       // $featured_amenities_facilities  = get_field('featured_amenities_facilities');
 ?>
@@ -20,12 +32,18 @@
       <article class="content introduction noscroll" id="chapterintroduction">
         <div class="inner">
           <h2><span>HEllo, I'm</span><br>
-            Andrew Smith</h2>
-          <span class="title">UX Designer / Frontend Developer</span> </div>
+            <?php echo $homeName; ?></h2>
+          <span class="title"><?php echo $homeJobPosition; ?></span> </div>
         <div id="owl-demo" class="owl-carousel">
-          <div class="item"><img src="http://placehold.it/804x979" alt="" /></div>
-          <div class="item"><img src="http://placehold.it/804x979" alt="" /></div>
-          <div class="item"><img src="http://placehold.it/804x979" alt="" /></div>
+          <?php if(count($homeSlideshow) > 0): ?>
+            <?php foreach($homeSlideshow as $slideshow):?>
+              <div class="item"><img src="<?php echo $slideshow['image']['url'];?>" alt="" /></div>
+            <?php endforeach;?>
+          <?php else:?>
+            <div class="item"><img src="http://placehold.it/804x979" alt="" /></div>
+            <div class="item"><img src="http://placehold.it/804x979" alt="" /></div>
+            <div class="item"><img src="http://placehold.it/804x979" alt="" /></div>
+          <?php endif;?>
         </div>
       </article>
 
@@ -36,17 +54,15 @@
           <div class="title-divider"></div>
           <div class="about-con">
             <ul>
-              <li>Name: Andrew Smith</li>
-              <li>Email: <a href="mailto:andrew@gmail.com">andrew@gmail.com</a></li>
-              <li>Phone: (123) - 456-7890</li>
-              <li>Date of birth: 23 February 1986</li>
-              <li>Address: PO Box 16122 Collins Street West, Victoria, USA.</li>
-              <li>Nationality: United States</li>
+              <li>Name: <?php echo $aboutName ?></li>
+              <li>Email: <a href="mailto:<?php echo $aboutEmail ?>"><?php echo $aboutEmail ?></a></li>
+              <li>Phone: <?php echo $aboutContactNumber; ?></li>
+              <li>Date of birth: <?php echo $aboutDOB ?></li>
+              <li>Address: <?php echo $aboutAddress ?></li>
             </ul>
             <h3>Professional Profile</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare sem sed quam tempus aliquet vitae eget dolor. Proin eu ultrices libero. Curabitur vulputate vestibulum elementum. Suspendisse id neque a nibh mollis blandit.<br>
-            </p>
-            <a href="#" class="button">Download resume as PDF format</a> <img src="http://placehold.it/150x134" class="signature" alt="" /></div>
+            <p><?php echo $aboutProfessionalProfileDescription; ?><br></p>
+            <a href="<?php echo $aboutResume ?>" class="button">Download resume as PDF format</a></div>
         </div>
       </article>
 
