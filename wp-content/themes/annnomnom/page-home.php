@@ -17,8 +17,23 @@
       $aboutAddress = get_field('address', 24);
       $aboutProfessionalProfileDescription = get_field('professional_profile_description', 24);
       $aboutResume = get_field('resume', 24);
-      // $featured_services              = get_field('featured_services');
-      // $featured_amenities_facilities  = get_field('featured_amenities_facilities');
+
+      //skills slide
+      $skillsPageDescription = get_field('page_description', 26);
+      $listOfSkills = get_field('list_of_skills', 26);
+      $otherSkillsShortDescription = get_field('other_skills_short_description', 26);
+      $listOfOtherSkills = get_field('list_of_other_skills', 26);
+      $languageSkillsShortDescription = get_field('language_skills_short_description', 26);
+      $listOfLanguageSkills = get_field('list_of_language_skills', 26);
+
+      //experience slide
+      $experiencePageDescription = get_field('page_description', 28);
+      $listOfExperience = get_field('list_of_job_experience', 28);
+
+      //project slide
+
+      //contact slide
+
 ?>
 
 <div id="container" class="container">
